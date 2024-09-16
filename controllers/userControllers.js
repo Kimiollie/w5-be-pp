@@ -52,7 +52,7 @@ const updateUser = async (req, res) => {
   }
 
   try {
-    const updatedUser = await User.findOneAndUpdate(
+    const updatedUser = await User.findOneAndReplace(
       { _id: userId },
       { ...req.body },
       { new: true }
