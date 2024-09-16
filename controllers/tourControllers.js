@@ -52,7 +52,7 @@ const updateTour = async (req, res) => {
   }
 
   try {
-    const updatedTour = await Tour.findOneAndUpdate(
+    const updatedTour = await Tour.findOneAndReplace(
       { _id: tourId },
       { ...req.body },
       { new: true }
